@@ -1,0 +1,44 @@
+.spacer {
+    flex: 1 1 auto;
+    background-color: #3f51b5;
+}
+.alignment {
+    position: absolute;
+    top: 65px;
+    bottom: -4px;
+    left:3px;
+    right: -2px;
+    background: #eee;
+    flex: 1 1 auto;
+  }
+
+  .button {
+    background-color: #3f51b5;
+    border: none; 
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 1px;
+    cursor: pointer;
+  }
+  .button1 {
+    background-color: white; 
+    color: black; 
+    
+  }
+  .button1:hover {
+    background-color: #3f51b5;
+    color: white;
+  }
+
+  .tabbutton1 {
+    background-color: #3f51b5; 
+    color: black; 
+    
+  }
+  .tabbutton1:hover {
+    background-color:  #ff4d6f;
+    color: white;
+  }
