@@ -1,9 +1,4 @@
-<html>
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js">
-        </script>
-    </head>
-<body>
+
 <h1 class="center">ADD BOOK DETAILS</h1><br>
 
 <div ng-app="myApp" 
@@ -20,17 +15,3 @@ Author: <input type="text" ng-model="author"><br><br>
 Price: <input type="text" ng-model="price"><br><br>
 <button ng-click="addbook()" class="tabbutton1">Save</button>
 </div>
-
-<div style="float:left;padding:10px;margin:0 auto;">
-
-    <h3>Books & Prices</h3>
-
-    <!-- LOOP.-->
-    <ul ng-repeat="books in list">
-        <li>{{ books.isbn + ' , '+ books.title + ' , '+ books.author + ' , ' + books.price }}</li>
-</ul>
-</div>
-
-</div>
-</body>
-</html>
