@@ -1,9 +1,11 @@
+
 <mat-toolbar class="spacer">
     <h2>Library Management System</h2>
     <div class="spacer"></div>
     <a mat-list-item href="#" class="button tabbutton1" routerLink="/addbook"><b>Home</b></a>
     <a mat-list-item href="#" class="button tabbutton1" routerLink="/addbook"><b>About Us</b></a>
   </mat-toolbar>
+  
 <mat-sidenav-container class="alignment" fixedInViewport="true">
        <mat-sidenav mode="side" opened>
         <mat-nav-list>
@@ -11,7 +13,10 @@
             <a mat-list-item href="#" class="button button1" routerLink="/showbook">SHOW BOOKS</a><hr>
           </mat-nav-list>
        </mat-sidenav>
+    
     <mat-sidenav-content color="primary">
+      <div class="center">
       <router-outlet></router-outlet>
+    </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
