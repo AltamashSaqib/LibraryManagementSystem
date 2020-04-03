@@ -10,7 +10,7 @@ export class AddbookComponent implements OnInit {
 
   dynamicForm: FormGroup;
   submitted = false;
-  items: FormArray;
+  addBook = [];
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -26,9 +26,8 @@ export class AddbookComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
-    this.items.push(this.dynamicForm.value);
+    this.addBook.push(this.dynamicForm.value);
     // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.items.value, null, 4));
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.addBook));
 }
 }

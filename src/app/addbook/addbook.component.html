@@ -29,4 +29,21 @@ Price: <input type="text" ng-model="price"><br><br>
         </div>
         <button class="tabbutton1">Save</button>
     </form>
-</div>
+</div><br>
+
+<table class="customers">
+    <tr>
+        <th>ISBN</th>
+            <th>TITLE</th>
+                <th>AUTHOR</th>
+                    <th>PRICE</th>        
+    </tr>
+    <!-- BIND ARRAY TO TABLE -->
+    <tr *ngFor="let val of addBook; let i = index">   
+
+          <td>{{ val.isbn}}</td>
+          <td>{{ val.title}}</td>
+          <td>{{ val.author}}</td>
+          <td>{{ val.price}}</td>
+    </tr>
+</table>
