@@ -2,10 +2,29 @@
 <div class="center">
     
 <h2>LIST OF BOOKS AVAILABLE</h2>
-
-
-
-<button ng-click="addbook()" class="tabbutton1">Update</button>
-<button ng-click="addbook()" class="tabbutton1">Delete</button>
-
+<table class="customers">
+    <tr>
+        <th>ISBN</th>
+            <th>TITLE</th>
+                <th>AUTHOR</th>
+                    <th>PRICE</th>        
+    </tr>
+    <!-- BIND ARRAY TO TABLE -->
+        <tr *ngFor="let book of bookList; let i=index">
+          <td>{{ book.isbn}}</td>
+          <td>{{ book.title}}</td>
+          <td>{{ book.author}}</td>
+          <td>{{ book.price}}</td>
+          <button (click)="EditDetails(book.isbn)" class="tabbutton1">EditDetails</button>  
+          <button (click)="deleteBook(i)" class="tabbutton1">Remove</button>
+        </tr>
+</table>
+<br>
+<!--
+<ul>
+    <li *ngFor="let book of bookList">
+      {{ book.isbn }} | {{ book.title }} | {{ book.author }} | {{ book.price }}  
+    </li>
+  </ul>
+  -->
 </div>
