@@ -58,7 +58,7 @@ export class AddbookComponent implements OnInit {
 
 updateBook()
 {
-  
+  this.addBookData.push(Object.assign({}, this.dynamicForm.patchValue));
   alert('Details Updated successfully');
 }
 }
