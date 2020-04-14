@@ -14,6 +14,7 @@ export class AddbookComponent implements OnInit {
   dynamicForm: FormGroup;
   submitted = false;
   addBookData = [];
+  newItem = [];
 
   constructor(private formBuilder: FormBuilder, private dataService: DataService, 
     private route: ActivatedRoute) { }
@@ -50,13 +51,14 @@ export class AddbookComponent implements OnInit {
     this.submitted = true;
     this.dataService.addBook(this.dynamicForm.value);
     this.addBookData.push(this.dynamicForm.value);
+    this.dynamicForm.reset();
     // display form values on success
     alert('Book Saved successfully');
 }
 
 updateBook()
 {
-  this.addBookData.push(Object.assign({},this.dynamicForm.patchValue));
+  
   alert('Details Updated successfully');
 }
 }
