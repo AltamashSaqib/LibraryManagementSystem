@@ -58,7 +58,12 @@ export class AddbookComponent implements OnInit {
 
 updateBook()
 {
-  this.addBookData.push(Object.assign({}, this.dynamicForm.patchValue));
-  alert('Details Updated successfully');
+  const book = this.dynamicForm.value;
+
+  const itemIndex = this.dataService.getBooks().findIndex(item => item.isbn === this.dynamicForm.value.isbn);
+
+  this.dataService.updateBook(book, itemIndex);
+
+  alert('Book Updated successfully');
 }
 }

@@ -30,4 +30,11 @@ export class DataService {
   {
       return this.bookList.pop();
   }
+
+  public updateBook(book, index) {
+
+    this.bookList[index] = book;
+
+  }
+  
 }
