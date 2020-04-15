@@ -32,9 +32,7 @@ export class DataService {
   }
 
   public updateBook(book, index) {
-
-    this.bookList[index] = book;
-
+   this.bookList[index] = book;
   }
-  
+
 }
