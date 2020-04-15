@@ -1,4 +1,6 @@
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 <div class="center">
     
 <h2>LIST OF BOOKS AVAILABLE</h2>
@@ -7,7 +9,9 @@
         <th>ISBN</th>
             <th>TITLE</th>
                 <th>AUTHOR</th>
-                    <th>PRICE</th>        
+                    <th>PRICE</th>  
+                      <th>EDIT</th>
+                        <th>REMOVE</th>      
     </tr>
     <!-- BIND ARRAY TO TABLE -->
         <tr *ngFor="let book of bookList; let i=index">
@@ -15,8 +19,8 @@
           <td>{{ book.title}}</td>
           <td>{{ book.author}}</td>
           <td>{{ book.price}}</td>
-          <button (click)="EditDetails(book.isbn)" class="tabbutton1">EditDetails</button>  
-          <button (click)="deleteBook(i)" class="tabbutton1">Remove</button>
+         <td><button (click)="EditDetails(book.isbn)" class="button button1"><i class="material-icons">create</i></button></td> 
+         <td><button (click)="deleteBook(i)" class="button button1"><i class="material-icons">clear</i></button></td> 
         </tr>
 </table>
 <br>
