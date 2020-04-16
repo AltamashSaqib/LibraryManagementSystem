@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../service/data.service';
 import {ActivatedRoute} from '@angular/router';
 import { __param } from 'tslib';
@@ -14,14 +14,13 @@ export class AddbookComponent implements OnInit {
   dynamicForm: FormGroup;
   submitted = false;
   addBookData = [];
-  newItem = [];
 
   constructor(private formBuilder: FormBuilder, private dataService: DataService, 
     private route: ActivatedRoute) { }
 
   ngOnInit() {
       this.dynamicForm = this.formBuilder.group({
-          isbn: [''],
+          isbn: ['',Validators.required],
           title: [''],
           author: [''],
           price: ['']
