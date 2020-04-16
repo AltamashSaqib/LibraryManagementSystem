@@ -21,9 +21,9 @@ export class AddbookComponent implements OnInit {
   ngOnInit() {
       this.dynamicForm = this.formBuilder.group({
           isbn: ['',Validators.required],
-          title: [''],
-          author: [''],
-          price: ['']
+          title: ['',Validators.required],
+          author: ['',Validators.required],
+          price: ['',Validators.required]
       });
 
       this.route.params.subscribe((data: any) => {
@@ -33,6 +33,10 @@ export class AddbookComponent implements OnInit {
           this.getBook(bookid);
         }
       });
+  }
+
+  get f(){
+    return this.dynamicForm.controls;
   }
 
   getBook(id:any)
@@ -48,6 +52,11 @@ export class AddbookComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    
+    if(this.dynamicForm.invalid)
+    {
+      return;
+    }
     this.dataService.addBook(this.dynamicForm.value);
     this.addBookData.push(this.dynamicForm.value);
     this.dynamicForm.reset();
