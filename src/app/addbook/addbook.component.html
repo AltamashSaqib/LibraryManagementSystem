@@ -40,9 +40,8 @@
     <br>
 </div>
 
- 
-
-<!--
-    <div *ngFor="let val of addBook; let i = index">
-<app-showbook [val]="val"></app-showbook></div>
-    -->
+<!--The below code is not working properly-->
+<mat-form-field>
+    <mat-label>What's your name?</mat-label>
+    <input matInput [(ngModel)]="name">
+  </mat-form-field>
