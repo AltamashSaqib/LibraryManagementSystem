@@ -36,17 +36,17 @@
   .button {
     background-color: #3f51b5;
     border: none; 
-    padding: 10px 15px;
+    padding: 8px 12px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 12px;
     margin: 1px 1px;
     cursor: pointer;
   }
   .button1 {
-    background-color: #3f51b5; 
-    color: white; 
+    background-color: wheat; 
+    color: black; 
     
   }
   .button1:hover {

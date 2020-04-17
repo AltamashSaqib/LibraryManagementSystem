@@ -6,7 +6,7 @@
             <label>ISBN:</label>
             <input type="text" formControlName="isbn" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.isbn.errors }"/>
             <div *ngIf="submitted && f.isbn.errors" class="invalid-feedback">
-                <div *ngIf="f.isbn.errors.required">ISBN is required.</div>
+                <div *ngIf="f.isbn.errors.required">ISBN is required</div>
             </div>
         </div>
 
@@ -14,7 +14,7 @@
             <label>Title:</label>
             <input type="text" formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }"/>
             <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
-                <div *ngIf="f.title.errors.required">Title is required.</div>
+                <div *ngIf="f.title.errors.required">Title is required</div>
             </div>
         </div>
 
@@ -22,7 +22,7 @@
             <label>Author:</label>
             <input type="text" id="author" formControlName="author" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.author.errors }"/>
             <div *ngIf="submitted && f.author.errors" class="invalid-feedback">
-                <div *ngIf="f.author.errors.required">Author is required.</div>
+                <div *ngIf="f.author.errors.required">Author is required</div>
             </div>
         </div>
 
@@ -30,7 +30,7 @@
             <label>Price:</label>
             <input type="text" formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }"/>
             <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
-                <div *ngIf="f.price.errors.required">Price is required.</div>
+                <div *ngIf="f.price.errors.required">Price is required</div>
             </div>
         </div>
 
