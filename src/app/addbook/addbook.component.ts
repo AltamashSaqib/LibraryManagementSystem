@@ -26,18 +26,23 @@ export class AddbookComponent implements OnInit {
           price: ['',Validators.required]
       });
 
-      this.route.params.subscribe((data: any) => {
+    /* 
+    *Fetching ID of particular row for update*
+
+    this.route.params.subscribe((data: any) => {
         let bookid = data['id'] || null;
         if(bookid)
         {
           this.getBook(bookid);
         }
-      });
+      }); */
   }
 
   get f(){
     return this.dynamicForm.controls;
   }
+/*
+*Fetching the Existing data to update*
 
   getBook(id:any)
   {
@@ -49,20 +54,27 @@ export class AddbookComponent implements OnInit {
       price: item['price']
     });
   }
-
-  onSubmit() {
+*/
+  onSubmit(): void {
     this.submitted = true;
     
     if(this.dynamicForm.invalid)
     {
       return;
     }
-    this.dataService.addBook(this.dynamicForm.value);
-    this.addBookData.push(this.dynamicForm.value);
+   // this.dataService.addBook(this.dynamicForm.value);
+    //this.addBookData.push(this.dynamicForm.value);
+
+    this.dataService.addBook(this.dynamicForm.value)
+    .subscribe(data =>
+    { alert('Book Saved successfully');
+  }); 
     this.dynamicForm.reset();
     // display form values on success
-    alert('Book Saved successfully');
-}
+    
+};
+/*
+*Update book code*
 
 updateBook()
 {
@@ -71,4 +83,7 @@ updateBook()
   this.dataService.updateBook(book, itemIndex);
   alert('Book Updated successfully');
 }
+
+*/
+
 }
