@@ -16,7 +16,7 @@ export class DataService {
 
   constructor(private http:HttpClient) { }
 
-  private userUrl = 'http://localhost:8080/';
+  private userUrl = 'http://localhost:8080/addBooks';
 
   public addBook(book){
     this.bookList.push(book);

@@ -12,7 +12,8 @@ export class ShowbookComponent implements OnInit {
   bookList = [];
 
   constructor(private dataService: DataService, private router:Router,private route: ActivatedRoute) {
-    this.bookList = dataService.getBooks();
+   /*
+   this.bookList = dataService.getBooks();  */
     
    }
 
