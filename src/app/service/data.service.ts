@@ -16,11 +16,21 @@ export class DataService {
 
   constructor(private http:HttpClient) { }
 
-  private userUrl = 'http://localhost:8080/addBooks';
-
+  private addUrl = 'http://localhost:8080/addBooks';
+  private showUrl = 'http://localhost:8080/getBooks';
+  private deleteUrl = 'http://localhost:8080/deleteBooks';
   public addBook(book){
-    this.bookList.push(book);
-    return this.http.post(this.userUrl,book);
+    //this.bookList.push(book);
+    return this.http.post(this.addUrl,book);
+  }
+
+  public  getBooks() {
+    return this.http.get(this.showUrl);
+  }
+
+  public deleteBook(book)
+  {
+    return this.http.delete(this.deleteUrl,book);
   }
 
 /*

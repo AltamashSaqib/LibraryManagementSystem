@@ -12,19 +12,22 @@ export class ShowbookComponent implements OnInit {
   bookList = [];
 
   constructor(private dataService: DataService, private router:Router,private route: ActivatedRoute) {
-   /*
-   this.bookList = dataService.getBooks();  */
-    
+  
+  this.dataService.getBooks();
+   
    }
 
   ngOnInit(): void {
  
   }
 
-  deleteBook(index)
+  deleteBook(index:number)
   {
-    this.bookList.splice(index,1);
-  }
+    this.dataService.deleteBook(index)
+    .subscribe(data =>{
+      this.bookList = this.bookList.filter(i => i!== index);
+    })
+  };
 
   
   EditDetails(isbn: number){
