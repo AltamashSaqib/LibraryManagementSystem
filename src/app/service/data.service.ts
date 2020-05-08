@@ -19,6 +19,8 @@ export class DataService {
   private addUrl = 'http://localhost:8080/addBooks';
   private showUrl = 'http://localhost:8080/getBooks';
   private deleteUrl = 'http://localhost:8080/deleteBooks';
+
+
   public addBook(book){
     //this.bookList.push(book);
     return this.http.post(this.addUrl,book);
@@ -28,9 +30,10 @@ export class DataService {
     return this.http.get(this.showUrl);
   }
 
-  public deleteBook(book)
+  public deleteBook(index)
   {
-    return this.http.delete(this.deleteUrl,book);
+    return this.http.get(this.deleteUrl +"/"+index);
+    console.log("abcd");
   }
 
 /*
@@ -59,5 +62,4 @@ export class DataService {
   }
 
   */
-
 }

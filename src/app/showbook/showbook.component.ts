@@ -9,19 +9,21 @@ import { Router, ActivatedRoute} from '@angular/router';
 })
 export class ShowbookComponent implements OnInit {
 
-  bookList = [];
+  bookList : any;
 
   constructor(private dataService: DataService, private router:Router,private route: ActivatedRoute) {
-  
-  this.dataService.getBooks();
-   
-   }
+   //this.bookList = dataService.getBooks();
+  }
 
   ngOnInit(): void {
+    this.dataService.getBooks()
+  .subscribe(data =>{
+    this.bookList = data;
+  });
  
   }
 
-  deleteBook(index:number)
+  deleteBooks(index:number)
   {
     this.dataService.deleteBook(index)
     .subscribe(data =>{
