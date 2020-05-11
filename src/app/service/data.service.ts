@@ -32,7 +32,7 @@ export class DataService {
 
   public deleteBook(index)
   {
-    return this.http.get(this.deleteUrl +"/"+index);
+    return this.http.delete(this.deleteUrl +"/"+index);
     console.log("abcd");
   }
 
@@ -51,7 +51,6 @@ export class DataService {
         }
       }
       
-
   public deleteBook()
   {
       return this.bookList.pop();
@@ -60,6 +59,5 @@ export class DataService {
   public updateBook(book, index) {
    this.bookList[index] = book;
   }
-
-  */
+*/
 }

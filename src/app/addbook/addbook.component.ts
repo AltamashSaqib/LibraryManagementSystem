@@ -37,6 +37,7 @@ export class AddbookComponent implements OnInit {
         }
       }); */
   }
+  
 
   get f(){
     return this.dynamicForm.controls;
@@ -83,7 +84,7 @@ updateBook()
   this.dataService.updateBook(book, itemIndex);
   alert('Book Updated successfully');
 }
-
 */
+
 
 }
