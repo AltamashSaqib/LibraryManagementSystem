@@ -16,23 +16,23 @@ export class DataService {
 
   constructor(private http:HttpClient) { }
 
-  //private addUrl = 'http://localhost:8080/addBooks';
-  //private showUrl = 'http://localhost:8080/getBooks';
-  //private deleteUrl = 'http://localhost:8080/deleteBooks';
-  private bookUrl = '/api';
+  private addUrl = 'http://localhost:8080/addBooks';
+  private showUrl = 'http://localhost:8080/getBooks';
+  private deleteUrl = 'http://localhost:8080/deleteBooks';
+ // private bookUrl = '/api';
 
   public addBook(book){
     //this.bookList.push(book);
-    return this.http.post(this.bookUrl,book);
+    return this.http.post(this.addUrl,book);
   }
 
   public  getBooks() {
-    return this.http.get(this.bookUrl);
+    return this.http.get(this.showUrl);
   }
 
   public deleteBook(index)
   {
-    return this.http.delete(this.bookUrl +"/"+index);
+    return this.http.delete(this.deleteUrl+"/"+index);
     console.log("abcd");
   }
 
