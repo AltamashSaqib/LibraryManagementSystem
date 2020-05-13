@@ -19,6 +19,7 @@ export class DataService {
   private addUrl = 'http://localhost:8080/addBooks';
   private showUrl = 'http://localhost:8080/getBooks';
   private deleteUrl = 'http://localhost:8080/deleteBooks';
+  
  // private bookUrl = '/api';
 
   public addBook(book){
