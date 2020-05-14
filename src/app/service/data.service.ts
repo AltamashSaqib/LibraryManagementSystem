@@ -19,7 +19,7 @@ export class DataService {
   private addUrl = 'http://localhost:8080/addBooks';
   private showUrl = 'http://localhost:8080/getBooks';
   private deleteUrl = 'http://localhost:8080/deleteBooks';
-  
+
  // private bookUrl = '/api';
 
   public addBook(book){
@@ -37,6 +37,16 @@ export class DataService {
     console.log("abcd");
   }
 
+  public getBookId(isbn:any) {
+    if(isbn){
+      return this.bookList.filter(item => item.isbn == isbn);
+    }
+  }
+
+  public updateBook(book, index) {
+    this.bookList[index] = book;
+   }
+
 /*
   public  addBook(book) {
     this.bookList.push(book);
@@ -46,17 +56,17 @@ export class DataService {
     return this.bookList;
   }
 
+  public deleteBook()
+  {
+      return this.bookList.pop();
+  }
+
   public getBookId(isbn:any) {
         if(isbn){
           return this.bookList.filter(item => item.isbn == isbn);
         }
       }
       
-  public deleteBook()
-  {
-      return this.bookList.pop();
-  }
-
   public updateBook(book, index) {
    this.bookList[index] = book;
   }

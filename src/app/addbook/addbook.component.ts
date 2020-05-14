@@ -27,7 +27,7 @@ export class AddbookComponent implements OnInit {
       });
 
     /* 
-    *Fetching ID of particular row for update*
+    *Fetching ID of particular row for update*/
 
     this.route.params.subscribe((data: any) => {
         let bookid = data['id'] || null;
@@ -35,7 +35,7 @@ export class AddbookComponent implements OnInit {
         {
           this.getBook(bookid);
         }
-      }); */
+      }); 
   }
   
 
@@ -43,7 +43,7 @@ export class AddbookComponent implements OnInit {
     return this.dynamicForm.controls;
   }
 /*
-*Fetching the Existing data to update*
+*Fetching the Existing data to update**/
 
   getBook(id:any)
   {
@@ -55,7 +55,7 @@ export class AddbookComponent implements OnInit {
       price: item['price']
     });
   }
-*/
+
   onSubmit(): void {
     this.submitted = true;
     
@@ -75,7 +75,7 @@ export class AddbookComponent implements OnInit {
     
 };
 /*
-*Update book code*
+*Update book code**/
 
 updateBook()
 {
@@ -84,7 +84,7 @@ updateBook()
   this.dataService.updateBook(book, itemIndex);
   alert('Book Updated successfully');
 }
-*/
+
 
 
 }
