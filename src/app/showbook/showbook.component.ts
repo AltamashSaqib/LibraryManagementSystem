@@ -32,8 +32,8 @@ export class ShowbookComponent implements OnInit {
   };
 
   
-  EditDetails(isbn: number){
-      this.router.navigate(['/addbook',isbn]);
+  EditDetails(book){
+      this.router.navigate(['/addbook',book]);
   }
     
 
