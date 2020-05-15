@@ -37,8 +37,7 @@ export class AddbookComponent implements OnInit {
         }
       }); 
   }
-  
-
+ 
   get f(){
     return this.dynamicForm.controls;
   }
@@ -75,7 +74,7 @@ export class AddbookComponent implements OnInit {
     
 };
 /*
-*Update book code**/
+*Update book code*
 
 updateBook()
 {
@@ -85,6 +84,6 @@ updateBook()
   alert('Book Updated successfully');
 }
 
-
+*/
 
 }

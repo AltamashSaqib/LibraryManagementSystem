@@ -19,6 +19,7 @@ export class DataService {
   private addUrl = 'http://localhost:8080/addBooks';
   private showUrl = 'http://localhost:8080/getBooks';
   private deleteUrl = 'http://localhost:8080/deleteBooks';
+  private idUrl = 'http://localhost:8080/books';
 
  // private bookUrl = '/api';
 
@@ -34,12 +35,11 @@ export class DataService {
   public deleteBook(index)
   {
     return this.http.delete(this.deleteUrl+"/"+index);
-    console.log("abcd");
   }
 
-  public getBookId(isbn:any) {
+  public getBookId(isbn) {
     if(isbn){
-      return this.bookList.filter(item => item.isbn == isbn);
+      return this.http.get(this.idUrl+"/"+isbn);
     }
   }
 
