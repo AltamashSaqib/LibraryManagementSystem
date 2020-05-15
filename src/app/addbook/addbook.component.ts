@@ -27,17 +27,17 @@ export class AddbookComponent implements OnInit {
       });
 
     /* 
-    *Fetching ID of particular row for update*/
+    *Fetching ID of particular row for update
 
-   /* this.route.params.subscribe((data: any) => {
+   this.route.params.subscribe((data: any) => {
         let bookid = data['id'] || null;
         if(bookid)
         {
           this.getBook(bookid);
         }
-      }); */
-      let id = this.route.snapshot.params.id;
-      this.getBook(id);
+      }); 
+      let id = console.log(this.route.snapshot.params.id;
+      this.getBook(id);*/
     }
  
   get f(){
