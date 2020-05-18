@@ -14,6 +14,7 @@ export class AddbookComponent implements OnInit {
   dynamicForm: FormGroup;
   submitted = false;
   addBookData = [];
+  editBook = {};
 
   constructor(private formBuilder: FormBuilder, private dataService: DataService, 
     private route: ActivatedRoute) { }
@@ -38,13 +39,25 @@ export class AddbookComponent implements OnInit {
       }); 
       let id = console.log(this.route.snapshot.params.id;
       this.getBook(id);*/
+      this.route.paramMap.subscribe( param => {
+        this.editBook = param["params"];
+        if (Object.keys(this.editBook).length !== 0) {
+        console.log('populating values' + JSON.stringify(this.editBook));
+        this.dynamicForm.patchValue({
+        isbn: this.editBook['isbn'],
+        title: this.editBook['title'],
+        author: this.editBook['author'],
+        price: this.editBook['price'],
+        });
+        }
+        });
     }
  
   get f(){
     return this.dynamicForm.controls;
   }
 /*
-*Fetching the Existing data to update**/
+*Fetching the Existing data to update*
 
   getBook(id:any)
   {
@@ -55,7 +68,7 @@ export class AddbookComponent implements OnInit {
       author: item['author'],
       price: item['price']
     });
-  }
+  }*/
 
   onSubmit(): void {
     this.submitted = true;
@@ -87,5 +100,18 @@ updateBook()
 }
 
 */
+updateBook()
+{
+  const book = this.dynamicForm.value;
+  console.log(this.dynamicForm.value);
+  const itemIndex = this.dynamicForm.value.isbn;
+  console.log(this.dynamicForm.value.isbn);
+  this.dataService.updateBook(book, itemIndex).subscribe(data =>{
+  alert('Book Updated successfully');
+});
+
+};
+
+
 
 }

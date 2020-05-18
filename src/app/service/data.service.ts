@@ -20,6 +20,7 @@ export class DataService {
   private showUrl = 'http://localhost:8080/getBooks';
   private deleteUrl = 'http://localhost:8080/deleteBooks';
   private idUrl = 'http://localhost:8080/books';
+  private updateUrl = 'http://localhost:8080/updateBooks';
 
  // private bookUrl = '/api';
 
@@ -44,7 +45,8 @@ export class DataService {
   }
 
   public updateBook(book, index) {
-    this.bookList[index] = book;
+    console.log(book);
+    return this.http.put(this.updateUrl+"/"+index,book);
    }
 
 /*
