@@ -12,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule,routingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
-/*import { UserComponent } from './user.component';*/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddbookComponent } from './addbook/addbook.component';
@@ -21,7 +20,6 @@ import { ShowbookComponent } from './showbook/showbook.component';
 @NgModule({
   declarations: [
     AppComponent,
-    /*UserComponent,*/
     NavbarComponent,
     AddbookComponent,
     ShowbookComponent,
