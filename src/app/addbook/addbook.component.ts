@@ -27,18 +27,6 @@ export class AddbookComponent implements OnInit {
           price: ['',Validators.required]
       });
 
-    /* 
-    *Fetching ID of particular row for update
-
-   this.route.params.subscribe((data: any) => {
-        let bookid = data['id'] || null;
-        if(bookid)
-        {
-          this.getBook(bookid);
-        }
-      }); 
-      let id = console.log(this.route.snapshot.params.id;
-      this.getBook(id);*/
       this.route.paramMap.subscribe( param => {
         this.editBook = param["params"];
         if (Object.keys(this.editBook).length !== 0) {
@@ -56,19 +44,6 @@ export class AddbookComponent implements OnInit {
   get f(){
     return this.dynamicForm.controls;
   }
-/*
-*Fetching the Existing data to update*
-
-  getBook(id:any)
-  {
-    const item = this.dataService.getBookId(id).subscribe(res =>{console.log(res)}); 
-    this.dynamicForm.patchValue({
-      isbn: item['isbn'],
-      title: item['title'],
-      author: item['author'],
-      price: item['price']
-    });
-  }*/
 
   onSubmit(): void {
     this.submitted = true;
@@ -77,29 +52,15 @@ export class AddbookComponent implements OnInit {
     {
       return;
     }
-   // this.dataService.addBook(this.dynamicForm.value);
-    //this.addBookData.push(this.dynamicForm.value);
-
+   
     this.dataService.addBook(this.dynamicForm.value)
     .subscribe(data =>
     { alert('Book Saved successfully');
   }); 
     this.dynamicForm.reset();
-    // display form values on success
     
 };
-/*
-*Update book code*
 
-updateBook()
-{
-  const book = this.dynamicForm.value;
-  const itemIndex = this.dataService.getBooks().findIndex(item => item.isbn === this.dynamicForm.value.isbn);
-  this.dataService.updateBook(book, itemIndex);
-  alert('Book Updated successfully');
-}
-
-*/
 updateBook()
 {
   const book = this.dynamicForm.value;
@@ -111,7 +72,5 @@ updateBook()
 });
 
 };
-
-
 
 }

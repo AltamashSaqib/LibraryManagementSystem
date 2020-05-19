@@ -12,7 +12,6 @@ export class ShowbookComponent implements OnInit {
   bookList : any;
 
   constructor(private dataService: DataService, private router:Router,private route: ActivatedRoute) {
-   //this.bookList = dataService.getBooks();
   }
 
   ngOnInit(): void {

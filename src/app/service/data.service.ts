@@ -22,10 +22,8 @@ export class DataService {
   private idUrl = 'http://localhost:8080/books';
   private updateUrl = 'http://localhost:8080/updateBooks';
 
- // private bookUrl = '/api';
 
   public addBook(book){
-    //this.bookList.push(book);
     return this.http.post(this.addUrl,book);
   }
 
@@ -48,29 +46,4 @@ export class DataService {
     console.log(book);
     return this.http.put(this.updateUrl+"/"+index,book);
    }
-
-/*
-  public  addBook(book) {
-    this.bookList.push(book);
   }
-
-  public  getBooks() {
-    return this.bookList;
-  }
-
-  public deleteBook()
-  {
-      return this.bookList.pop();
-  }
-
-  public getBookId(isbn:any) {
-        if(isbn){
-          return this.bookList.filter(item => item.isbn == isbn);
-        }
-      }
-      
-  public updateBook(book, index) {
-   this.bookList[index] = book;
-  }
-*/
-}
