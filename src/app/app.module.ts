@@ -17,7 +17,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddbookComponent } from './addbook/addbook.component';
 import { ShowbookComponent } from './showbook/showbook.component';
-import { EditbookComponent } from './editbook/editbook.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { EditbookComponent } from './editbook/editbook.component';
     AddbookComponent,
     ShowbookComponent,
     routingComponent,
-    EditbookComponent,
   ],
   imports: [
     BrowserModule,

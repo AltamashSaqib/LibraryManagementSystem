@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddbookComponent } from './addbook/addbook.component';
 import { ShowbookComponent } from './showbook/showbook.component';
-import { EditbookComponent } from './editbook/editbook.component';
 
 const routes: Routes = [
   {path:'addbook', component: AddbookComponent},
@@ -16,4 +15,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponent = [AddbookComponent,ShowbookComponent,EditbookComponent]
+export const routingComponent = [AddbookComponent,ShowbookComponent]
