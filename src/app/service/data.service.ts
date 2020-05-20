@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { isDefined } from '@angular/compiler/src/util';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,34 +17,28 @@ export class DataService {
 
   constructor(private http:HttpClient) { }
 
-  private addUrl = 'http://localhost:8080/addBooks';
-  private showUrl = 'http://localhost:8080/getBooks';
-  private deleteUrl = 'http://localhost:8080/deleteBooks';
-  private idUrl = 'http://localhost:8080/books';
-  private updateUrl = 'http://localhost:8080/updateBooks';
-
 
   public addBook(book){
-    return this.http.post(this.addUrl,book);
+    return this.http.post(environment.api_url+'/addBooks',book);
   }
 
   public  getBooks() {
-    return this.http.get(this.showUrl);
+    return this.http.get(environment.api_url+'/getBooks');
   }
 
   public deleteBook(index)
   {
-    return this.http.delete(this.deleteUrl+"/"+index);
+    return this.http.delete(environment.api_url+'/deleteBooks'+"/"+index);
   }
 
   public getBookId(isbn) {
     if(isbn){
-      return this.http.get(this.idUrl+"/"+isbn);
+      return this.http.get(environment.api_url+'/books'+"/"+isbn);
     }
   }
 
   public updateBook(book, index) {
     console.log(book);
-    return this.http.put(this.updateUrl+"/"+index,book);
+    return this.http.put(environment.api_url+'/updateBooks'+"/"+index,book);
    }
   }
