@@ -17,7 +17,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddbookComponent } from './addbook/addbook.component';
 import { ShowbookComponent } from './showbook/showbook.component';
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import { LoginComponent } from './login/login.component';
     AddbookComponent,
     ShowbookComponent,
     routingComponent,
-    LoginComponent,
   ],
   imports: [
     BrowserModule,
